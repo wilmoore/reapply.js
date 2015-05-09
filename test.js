@@ -4,7 +4,7 @@
  * imports.
  */
 
-var path = require('path')
+var prep = require('string-prepend')
 var test = require('tape-catch')
 
 /*!
@@ -12,6 +12,13 @@ var test = require('tape-catch')
  */
 
 var reapply = require('./')
+
+/*!
+ * test fixutres.
+ */
+
+var fixtures = ['hello']
+var getFixture = prep('./test/fixture/')
 
 /*!
  * tests.
@@ -29,27 +36,18 @@ test('reapply/1', function (t) {
 })
 
 test('map', function (t) {
-  var mapper = reapply(['%s world', 'hello'])
-  var modules = ['format', 'format']
-
-  t.deepEqual(modules.map(mapper), [ 'hello world', 'hello world' ])
-  t.end()
+  t.plan(1)
+  var mapper = reapply(['There'])
+  var modules = [getFixture('hello')]
+  t.deepEqual(modules.map(mapper), [ 'Hello There' ])
 })
 
 test('prefix', function (t) {
-  var fixtures = ['hello']
-
   var message = fixtures
-  .map(respref([__dirname, 'test', 'fixture']))
-  .map(reapply(['Wil']))
+  .map(getFixture)
+  .map(reapply(['There']))
   .join('')
 
-  t.equal(message, 'Hello Wil')
+  t.equal(message, 'Hello There')
   t.end()
 })
-
-function respref (prefix) {
-  return function (file) {
-    return path.resolve.apply(null, prefix.concat(file))
-  }
-}
