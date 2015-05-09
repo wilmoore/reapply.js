@@ -52,6 +52,10 @@ modules.forEach(reapply([app]))
 
  - `(*)` returns result of function application.
 
+## Alternatives
+
+- If you find yourself wanting to map over a list with `reapply` you might be interested in [reapply-list](https://www.npmjs.com/package/reapply-list).
+
 ## Contributing
 
 > SEE: [contributing.md](contributing.md)
