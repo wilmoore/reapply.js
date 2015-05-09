@@ -20,16 +20,16 @@
   },
   "homepage": "https://github.com/wilmoore/reapply.js",
   "keywords": [
-    "partial",
     "application",
-    "module",
-    "composition",
-    "modules",
-    "require",
     "apply",
-    "partialapplication",
+    "composition",
     "function",
-    "functional"
+    "functional",
+    "module",
+    "modules",
+    "partial",
+    "partialapplication",
+    "require"
   ],
   "license": "MIT",
   "main": "index.js",
