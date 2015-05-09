@@ -1,7 +1,7 @@
 {
   "name": "reapply",
   "description": "Require a module and apply the export if it is a function.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Wil Moore III <wil.moore@wilmoore.com>",
   "bugs": {
     "url": "https://github.com/wilmoore/reapply.js/issues"
